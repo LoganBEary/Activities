@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import GetArea from './Components/PopUp'
+import { Route } from 'react-router-dom'
+import { React } from 'react'
+// import data from '../src/Components/data/data.json';
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Route exact path='/'>
+        <GetArea
+          content={<p>Please Enter Your Zip Code</p>}
+        />
+      </Route>
     </div>
-  );
+  )
 }
-
-export default App;
+// TODO get rid of Redirect and fetch data from JSON
+export default App
